@@ -22,9 +22,10 @@ Example:
 ![](media/gif2.gif)
 
 # Issues
-The calculation is done in real time inside the Update function, it is costly and inefective.
-If the angle of the background in relation to the raycast or the distance of the object changes too rapidly, it causes some glitches because of the real time calculation.
-There is a need for a lerp on the object positioning and in the target position of the object so the calculation can converge.
+* The calculation is done in real time inside the Update function, it is costly and inefective.
+* If the angle of the background in relation to the raycast or the distance of the object changes too rapidly, it causes some glitches because of the real time calculation.
+* There is a need for a lerp on the object positioning and in the target position of the object so the calculation can converge.
+* My pc was too slow to record a video without lagging the gameplay =(
 
 # Used pieces of assets
 * FPSController from Unity's Standard Assets
