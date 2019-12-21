@@ -2,14 +2,14 @@
 This is a single script project that simulates forced perspective illusion, like Pillow Castle's puzzle game.
 
 # Explanning the illusion
-In forced perspective optical illusions objects that are farther away appear smaller than it actually is. In this puzzle scene, once the object that is ayaw from the player is "taken", the visual scale is forced on the object to make it appear to be the same size, once the object is dropped, it is possible to notice that the object was scaled in relation to the farther background.
+In forced perspective optical illusions objects that are farther away appear smaller than it actually is. In this puzzle scene, once the object that is away from the player is "taken", the visual scale is forced on the object to make it appear to be the same size, once the object is dropped, it is possible to notice that the object was scaled in relation to the farther background.
 This project was made to test the possibility to create such illusion on Unity.
 Example:
 ![](media/forced-perspective-example.jpg)
 
 # Settings
 * The PerspectiveManager prefab have all is needed in terms of scripting of the illusion
-* Add a layer called TakenObkect
+* Add a layer called TakenObject
 * The player should have the camera attached to it, as first or third person
 * Have a second camera, child of the main camera
 * Main camera with Culling Mask set to ignore TakenObject layer
