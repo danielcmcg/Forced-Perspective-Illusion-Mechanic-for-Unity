@@ -1,0 +1,125 @@
+fileFormatVersion: 2
+guid: cba410fa184e16b4ab6b02e29c9fccf0
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: pCube1
+    100002: pCube2
+    100004: polySurface1
+    100006: prop_batteringRam_base1
+    100008: //RootNode
+    100010: prop_batteringRam_shield_top
+    100012: prop_batteringRam_shield_top1
+    100014: transform1
+    100016: transform2
+    100018: prop_batteringRam_baseShape_collision
+    100020: prop_batteringRam_fist_collision
+    100022: prop_batteringRam_shield_bottom_collision
+    100024: prop_batteringRam_shield_top_collision
+    100026: prop_batteringRam_base_collision
+    400000: pCube1
+    400002: pCube2
+    400004: polySurface1
+    400006: prop_batteringRam_base1
+    400008: //RootNode
+    400010: prop_batteringRam_shield_top
+    400012: prop_batteringRam_shield_top1
+    400014: transform1
+    400016: transform2
+    400018: prop_batteringRam_baseShape_collision
+    400020: prop_batteringRam_fist_collision
+    400022: prop_batteringRam_shield_bottom_collision
+    400024: prop_batteringRam_shield_top_collision
+    400026: prop_batteringRam_base_collision
+    2300000: pCube2
+    2300002: polySurface1
+    2300004: prop_batteringRam_shield_top
+    2300006: prop_batteringRam_shield_top1
+    2300008: prop_batteringRam_baseShape_collision
+    2300010: prop_batteringRam_fist_collision
+    2300012: prop_batteringRam_shield_bottom_collision
+    2300014: prop_batteringRam_shield_top_collision
+    2300016: prop_batteringRam_base_collision
+    3300000: pCube2
+    3300002: polySurface1
+    3300004: prop_batteringRam_shield_top
+    3300006: prop_batteringRam_shield_top1
+    3300008: prop_batteringRam_baseShape_collision
+    3300010: prop_batteringRam_fist_collision
+    3300012: prop_batteringRam_shield_bottom_collision
+    3300014: prop_batteringRam_shield_top_collision
+    3300016: prop_batteringRam_base_collision
+    4300000: prop_batteringRam_shield_top
+    4300002: pCube2
+    4300004: polySurface1
+    4300006: prop_batteringRam_shield_top1
+    4300008: prop_batteringRam_shield_top_collision
+    4300010: prop_batteringRam_fist_collision
+    4300012: prop_batteringRam_baseShape_collision
+    4300014: prop_batteringRam_shield_bottom_collision
+    4300016: prop_batteringRam_base_collision
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

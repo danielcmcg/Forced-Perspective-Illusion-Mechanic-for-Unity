@@ -1,0 +1,97 @@
+fileFormatVersion: 2
+guid: 917e29929631e264c97a7d174b0301e5
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: vehicle_rcFlyer_body_collision
+    100002: //RootNode
+    100004: vehicle_rcFlyer_leg_frontLeft_collision
+    100006: vehicle_rcFlyer_leg_frontRight_collision
+    100008: vehicle_rcFlyer_leg_rearLeft_collision
+    100010: vehicle_rcFlyer_leg_rearRight_collision
+    400000: vehicle_rcFlyer_body_collision
+    400002: //RootNode
+    400004: vehicle_rcFlyer_leg_frontLeft_collision
+    400006: vehicle_rcFlyer_leg_frontRight_collision
+    400008: vehicle_rcFlyer_leg_rearLeft_collision
+    400010: vehicle_rcFlyer_leg_rearRight_collision
+    2300000: vehicle_rcFlyer_body_collision
+    2300002: vehicle_rcFlyer_leg_frontLeft_collision
+    2300004: vehicle_rcFlyer_leg_frontRight_collision
+    2300006: vehicle_rcFlyer_leg_rearLeft_collision
+    2300008: vehicle_rcFlyer_leg_rearRight_collision
+    3300000: vehicle_rcFlyer_body_collision
+    3300002: vehicle_rcFlyer_leg_frontLeft_collision
+    3300004: vehicle_rcFlyer_leg_frontRight_collision
+    3300006: vehicle_rcFlyer_leg_rearLeft_collision
+    3300008: vehicle_rcFlyer_leg_rearRight_collision
+    4300000: vehicle_rcFlyer_leg_rearRight_collision
+    4300002: vehicle_rcFlyer_leg_frontLeft_collision
+    4300004: vehicle_rcFlyer_leg_rearLeft_collision
+    4300006: vehicle_rcFlyer_leg_frontRight_collision
+    4300008: vehicle_rcFlyer_body_collision
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

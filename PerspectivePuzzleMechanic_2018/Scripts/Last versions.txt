@@ -1,0 +1,757 @@
+
+    //----------V 1.4
+    // too much time since the last try, I'll try to redo the work from scratch on the next version
+    //
+    //public Material whiteToon;
+    //public Material blueToon;
+    //public Material redToon;
+    //
+    //private Camera mainCamera;
+    //private Transform targetForTakenObjects;
+    //private GameObject targetForTakenObjectsObject;
+    //private Vector3 tempBounds;
+    //private float tempCenter;
+    //private float tempDistance;
+    //private float tempDistance_;
+    //private float tempCos;
+    //private Vector3 tempScale;
+    //private GameObject pointer;
+    //private GameObject takenObject;
+    //private RaycastHit hit;
+    //private Ray ray;
+    //private float distanceMultiplier;
+    //private Vector3 scaleMultiplier;
+    //private LayerMask layerMask = ~(1 << 8);
+    //private float cameraHeight = 0;
+    //private float cosine;
+    //private float positionCalculation;
+    //private float lastPositionCalculation = 0;
+    //private Vector3 lastHitPoint = Vector3.zero;
+    //private Vector3 lastRotation = Vector3.zero;
+    //private float rayMaxRange = 1000f;
+    //private bool isRayTouchingSomething = true;
+    //private float lastRotationY;
+    //
+    //private Vector3 lastHit = Vector3.zero;
+    //private Vector3 centerCorrection = Vector3.zero;
+    //private float takenObjSize = 0;
+    //
+    //void Start()
+    //{
+    //
+    //    mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    //    targetForTakenObjects = GameObject.Find("targetForTakenObjects").transform;
+    //    targetForTakenObjectsObject = GameObject.Find("targetForTakenObjects");
+    //    pointer = GameObject.Find("Pointer");
+    //    //Cursor.visible = false;
+    //    pointer.transform.position = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2, (Screen.height / 2) + (Screen.height / 10), 1));
+    //    pointer.transform.parent = mainCamera.transform;
+    //}
+
+    //void Update()
+    //{
+    //
+    //    ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, (Screen.height / 2) + (Screen.height / 10), 0));
+    //    Debug.DrawRay(ray.origin, ray.direction * 200, Color.yellow);
+    //
+    //    if (Physics.Raycast(ray, out hit, rayMaxRange, layerMask))
+    //    {
+    //        if (hit.transform.tag == "Getable")
+    //        {
+    //            pointer.GetComponent<MeshRenderer>().material = blueToon;
+    //        }
+    //        else
+    //        {
+    //            pointer.GetComponent<MeshRenderer>().material = whiteToon;
+    //        }
+    //    }
+    //
+    //    isRayTouchingSomething = Physics.Raycast(ray, out hit, rayMaxRange, layerMask);
+    //
+    //    if (takenObject != null)
+    //    {
+    //        pointer.GetComponent<MeshRenderer>().material = redToon;
+    //    }
+    //    else
+    //    {
+    //        targetForTakenObjects.position = hit.point;
+    //    }
+    //
+    //    if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+    //    {
+    //        if (hit.transform.tag == "Getable")
+    //        {
+    //
+    //            takenObject = hit.transform.gameObject;
+    //            targetForTakenObjects.position = takenObject.transform.position;
+    //            targetForTakenObjects.rotation = takenObject.transform.rotation;
+    //            targetForTakenObjects.localScale = takenObject.transform.localScale;
+    //            tempBounds = takenObject.GetComponent<Collider>().bounds.size;
+    //            tempDistance = Vector3.Distance(hit.point, takenObject.transform.position);
+    //            tempCos = Vector3.Dot(ray.direction, hit.normal);
+    //            tempScale = takenObject.transform.localScale;
+    //            tempDistance_ = Vector3.Distance(mainCamera.transform.position, takenObject.transform.position);
+    //
+    //            if (takenObject.GetComponent<MeshCollider>() != null)
+    //            {
+    //                System.Type type = takenObject.GetComponent<MeshCollider>().GetType();
+    //                Component copy = targetForTakenObjectsObject.AddComponent(type);
+    //                targetForTakenObjectsObject.GetComponent<MeshCollider>().sharedMesh = takenObject.GetComponent<MeshCollider>().sharedMesh;
+    //                targetForTakenObjectsObject.GetComponent<MeshCollider>().convex = true;
+    //                targetForTakenObjectsObject.GetComponent<MeshCollider>().isTrigger = true;
+    //            }
+    //            // Copied fields can be restricted with BindingFlags
+    //            //targetForTakenObjectsObject.GetComponent<Collider>().material = takenObject.GetComponent<Collider>().material;
+    //
+    //            distanceMultiplier = Vector3.Distance(mainCamera.transform.position, takenObject.transform.position);
+    //            scaleMultiplier = takenObject.transform.localScale;
+    //            lastRotation = takenObject.transform.rotation.eulerAngles;
+    //            lastRotationY = lastRotation.y - mainCamera.transform.eulerAngles.y;
+    //
+    //            //takenObject.transform.transform.parent = Camera.main.transform;
+    //
+    //            if (takenObject.GetComponent<Rigidbody>() == null)
+    //            {
+    //                takenObject.AddComponent<Rigidbody>();
+    //            }
+    //            takenObject.GetComponent<Rigidbody>().isKinematic = true;
+    //            takenObject.GetComponent<Collider>().isTrigger = true;
+    //            if (takenObject.GetComponent<MeshRenderer>() != null)
+    //            {
+    //                takenObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+    //                takenObject.GetComponent<MeshRenderer>().receiveShadows = false;
+    //            }
+    //            takenObject.gameObject.layer = 8;
+    //            foreach (Transform child in takenObject.transform)
+    //            {
+    //                takenObject.GetComponent<Rigidbody>().isKinematic = true;
+    //                takenObject.GetComponent<Collider>().isTrigger = true;
+    //                child.gameObject.layer = 8;
+    //            }
+    //        }
+    //
+    //
+    //    }
+    //    if (Input.GetKey(KeyCode.E) || Input.GetMouseButton(0))
+    //    {
+    //        if (takenObject != null)
+    //        {
+    //
+    //            float newCos = Vector3.Dot(ray.direction, hit.normal);
+    //            float newDistance = (tempDistance * Mathf.Abs(newCos)) / Mathf.Abs(tempCos);
+    //            float newDistance_ = hit.distance - newDistance;
+    //            //GameObject sph = GameObject.Find("Sphere_Test");
+    //            //sph.transform.position = hit.point - (ray.direction * (tempScale.x * Mathf.Abs(newDistance_)) / Mathf.Abs(tempDistance_));
+    //
+    //            //StartCoroutine(Calculo());
+    //            //*** IMPROVE:
+    //            //*** this calculation is too slow: recenter the object to the center of the mesh regardless  real pivot point
+    //            if (takenObject.GetComponent<MeshCollider>() != null)
+    //                centerCorrection = targetForTakenObjects.position - targetForTakenObjectsObject.GetComponent<MeshCollider>().bounds.center;
+    //            else
+    //                centerCorrection = Vector3.zero;
+    //            //*
+    //
+    //            takenObject.transform.rotation = Quaternion.Lerp(takenObject.transform.rotation, Quaternion.Euler(new Vector3(0, lastRotationY + mainCamera.transform.eulerAngles.y, 0)), Time.deltaTime * 5);
+    //
+    //            cosine = Vector3.Dot(ray.direction, hit.normal);
+    //            cameraHeight = Mathf.Abs(hit.distance * cosine);
+    //
+    //            //*** IMPROVE:
+    //            //*** make this part of code better 
+    //            if (targetForTakenObjects.localScale.y > targetForTakenObjects.localScale.x)
+    //            {
+    //                takenObjSize = targetForTakenObjects.localScale.y;
+    //            }
+    //            else if (targetForTakenObjects.localScale.x > targetForTakenObjects.localScale.z)
+    //            {
+    //                takenObjSize = targetForTakenObjects.localScale.x;
+    //            }
+    //            else
+    //            {
+    //                takenObjSize = targetForTakenObjects.localScale.z;
+    //            }
+    //            //*
+    //
+    //            //positionCalculation = (hit.distance * takenObjSize / 2) / (hit.distance * cosine);
+    //
+    //
+    //            if (positionCalculation < rayMaxRange)
+    //            {
+    //                lastPositionCalculation = positionCalculation;
+    //            }
+    //
+    //            //*** NEEDED:
+    //            //*** if the wall is more distant then the raycast, increase the size only untill the end of the raycast
+    //            if (isRayTouchingSomething)
+    //            {
+    //                lastHitPoint = hit.point;
+    //            }
+    //            else
+    //            {
+    //                lastHitPoint = mainCamera.transform.position + ray.direction * rayMaxRange;
+    //            }
+    //            
+    //            takenObject.transform.position = Vector3.Lerp(takenObject.transform.position, Camera.main.transform.position
+    //                    + (ray.direction * distanceMultiplier) , Time.deltaTime * 10);
+    //            
+    //        }
+    //    }
+    //    if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0))
+    //    {
+    //        if (takenObject != null)
+    //        {
+    //            //targetForTakenObjects.position = lastHitPoint - (ray.direction * lastPositionCalculation);
+    //            //targetForTakenObjects.localScale = scaleMultiplier * (Vector3.Distance(mainCamera.transform.position, targetForTakenObjects.position) / distanceMultiplier);
+    //            //targetForTakenObjects.rotation = Quaternion.Euler(new Vector3(0, lastRotationY + mainCamera.transform.eulerAngles.y, 0));
+    //            float newCos = Vector3.Dot(ray.direction, hit.normal);
+    //            float newDistance = (tempDistance * Mathf.Abs(newCos)) / Mathf.Abs(tempCos);
+    //            float newDistance_ = hit.distance - newDistance;
+    //            Debug.Log(tempDistance_ + "  " + newDistance_);
+    //
+    //            positionCalculation = (takenObject.transform.localScale.x / 2f) / ( cosine);
+    //            lastPositionCalculation = positionCalculation;
+    //
+    //            Destroy(targetForTakenObjectsObject.GetComponent<MeshCollider>());
+    //
+    //            takenObject.transform.position = hit.point - (ray.direction * Mathf.Abs(newDistance));
+    //
+    //            //takenObject.transform.rotation = targetForTakenObjects.rotation;
+    //            takenObject.transform.localScale = (tempScale * Mathf.Abs(newDistance_))/ Mathf.Abs(tempDistance_);
+    //                //(takenObject.transform.localScale * hit.distance * Vector3.Dot(ray.direction, hit.normal)) / (tempDistance * tempCos);
+    //            
+    //
+    //            takenObject.GetComponent<Rigidbody>().isKinematic = false;
+    //            takenObject.GetComponent<Collider>().isTrigger = false;
+    //            if (takenObject.GetComponent<MeshRenderer>() != null)
+    //            {
+    //                takenObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+    //                takenObject.GetComponent<MeshRenderer>().receiveShadows = true;
+    //            }
+    //            takenObject.transform.parent = null;
+    //            takenObject.gameObject.layer = 0;
+    //            foreach (Transform child in takenObject.transform)
+    //            {
+    //                takenObject.GetComponent<Rigidbody>().isKinematic = false;
+    //                takenObject.GetComponent<Collider>().isTrigger = false;
+    //                child.gameObject.layer = 0;
+    //            }
+    //
+    //            takenObject = null;
+    //        }
+    //    }
+    //
+    //}
+
+
+    //----------V 1.3 (good but slow and costly)
+    //void Update()
+    //{
+
+    //    ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, (Screen.height / 2) + (Screen.height / 10), 0));
+    //    Debug.DrawRay(ray.origin, ray.direction * 200, Color.yellow);
+
+    //    if (Physics.Raycast(ray, out hit, rayMaxRange, layerMask))
+    //    {
+    //        if (hit.transform.tag == "Getable")
+    //        {
+    //            pointer.GetComponent<MeshRenderer>().material = blueToon;
+    //        }
+    //        else
+    //        {
+    //            pointer.GetComponent<MeshRenderer>().material = whiteToon;
+    //        }
+    //    }
+
+    //    isRayTouchingSomething = Physics.Raycast(ray, out hit, rayMaxRange, layerMask);  
+
+    //    if (takenObject != null)
+    //    {
+    //        pointer.GetComponent<MeshRenderer>().material = redToon;
+    //    }
+    //    else
+    //    {
+    //        targetForTakenObjects.position = hit.point;
+    //    }
+
+    //    if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+    //    {
+    //        if (hit.transform.tag == "Getable")
+    //        {
+
+    //            takenObject = hit.transform.gameObject;
+
+    //            distanceMultiplier = Vector3.Distance(mainCamera.transform.position, takenObject.transform.position);
+    //            scaleMultiplier = takenObject.transform.localScale;
+    //            lastRotation = takenObject.transform.rotation.eulerAngles;
+    //            lastRotationY = lastRotation.y - mainCamera.transform.eulerAngles.y;
+    //            takenObject.transform.transform.parent = targetForTakenObjects;
+
+    //            if (takenObject.GetComponent<Rigidbody>() == null)
+    //            {
+    //                takenObject.AddComponent<Rigidbody>();
+    //            }
+    //            takenObject.GetComponent<Rigidbody>().isKinematic = true;
+    //            takenObject.GetComponent<Collider>().isTrigger = true;
+    //            if (takenObject.GetComponent<MeshRenderer>() != null)
+    //            {
+    //                takenObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+    //                takenObject.GetComponent<MeshRenderer>().receiveShadows = false;
+    //            }
+    //            takenObject.gameObject.layer = 8;
+    //            foreach (Transform child in takenObject.transform)
+    //            {
+    //                takenObject.GetComponent<Rigidbody>().isKinematic = true;
+    //                takenObject.GetComponent<Collider>().isTrigger = true;
+    //                child.gameObject.layer = 8;
+    //            }
+    //        }
+
+
+    //    }
+    //    if (Input.GetKey(KeyCode.E) || Input.GetMouseButton(0))
+    //    {
+    //        if (takenObject != null)
+    //        {
+
+    //            //StartCoroutine(Calculo());
+    //            //*** IMPROVE:
+    //            //*** this calculation is too slow: recenter the object to the center of the mesh regardless  real pivot point
+    //            centerCorrection = takenObject.transform.position - takenObject.GetComponent<MeshRenderer>().bounds.center;
+    //            takenObject.transform.position = Vector3.Lerp(takenObject.transform.position, targetForTakenObjects.position + centerCorrection, Time.deltaTime * 5);
+
+    //            takenObject.transform.rotation = Quaternion.Lerp(takenObject.transform.rotation, Quaternion.Euler(new Vector3(0, lastRotationY + mainCamera.transform.eulerAngles.y, 0)), Time.deltaTime * 5);
+
+    //            cosine = Vector3.Dot(ray.direction, hit.normal);
+    //            cameraHeight = Mathf.Abs(hit.distance * cosine);
+
+    //            //*** IMPROVE:
+    //            //*** make this part of code better 
+    //            //takenObjSize = takenObject.GetComponent<Collider>().bounds.size.y;
+    //            if (takenObject.GetComponent<Collider>().bounds.size.y > takenObject.GetComponent<Collider>().bounds.size.x)
+    //            {
+    //                takenObjSize = takenObject.GetComponent<Collider>().bounds.size.y;
+    //            }
+    //            else if (takenObject.GetComponent<Collider>().bounds.size.x > takenObject.GetComponent<Collider>().bounds.size.z)
+    //            {
+    //                takenObjSize = takenObject.GetComponent<Collider>().bounds.size.x; 
+    //            }
+    //            else
+    //            {
+    //                takenObjSize = takenObject.GetComponent<Collider>().bounds.size.z;
+    //            }
+    //            //*
+
+    //            positionCalculation = (hit.distance * takenObjSize / 2) / (cameraHeight);
+
+
+    //            if (positionCalculation < rayMaxRange)
+    //            {
+    //                lastPositionCalculation = positionCalculation;
+    //            }
+
+    //            //*** NEEDED:
+    //            //*** if the wall is more distant then the raycast, increase the size untill the end of the raycast
+    //            if (isRayTouchingSomething)
+    //            {
+    //                lastHitPoint = hit.point;
+    //            }
+    //            else
+    //            {
+    //                lastHitPoint = mainCamera.transform.position + ray.direction * rayMaxRange;
+    //            }
+
+    //            //takenObject.transform.position = lastHitPoint - (ray.direction * lastPositionCalculation) + centerCorrection;
+
+    //            //takenObject.transform.position = Vector3.Lerp(takenObject.transform.position, lastHitPoint
+    //            //        - (ray.direction * lastPositionCalculation) + centerCorrection, Time.deltaTime * 10);
+
+    //            targetForTakenObjects.position = Vector3.Lerp(targetForTakenObjects.position, lastHitPoint
+    //                    - (ray.direction * lastPositionCalculation), Time.deltaTime * 10);
+
+    //            takenObject.transform.localScale = scaleMultiplier * (Vector3.Distance(mainCamera.transform.position, takenObject.transform.position) / distanceMultiplier);
+
+    //        }
+    //    }
+    //    if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0))
+    //    {
+    //        if (takenObject != null)
+    //        {
+
+    //            takenObject.GetComponent<Rigidbody>().isKinematic = false;
+    //            takenObject.GetComponent<Collider>().isTrigger = false;
+    //            if (takenObject.GetComponent<MeshRenderer>() != null)
+    //            {
+    //                takenObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+    //                takenObject.GetComponent<MeshRenderer>().receiveShadows = true;
+    //            }
+    //            takenObject.transform.parent = null;
+    //            takenObject.gameObject.layer = 0;
+    //            foreach (Transform child in takenObject.transform)
+    //            {
+    //                takenObject.GetComponent<Rigidbody>().isKinematic = false;
+    //                takenObject.GetComponent<Collider>().isTrigger = false;
+    //                child.gameObject.layer = 0;
+    //            }
+
+    //            takenObject = null;
+    //        }
+    //    }
+
+    //}
+
+    //IEnumerator Calculo()
+    //{
+    //    takenObject.transform.position = lastHitPoint - (ray.direction * lastPositionCalculation) + centerCorrection;
+
+    //    yield return new WaitForSeconds(0.1f);
+    //}
+
+
+    //---------V 1.2 (working good)
+    //void Update()
+    //{
+
+    //    ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, (Screen.height / 2) + (Screen.height / 10), 0));
+    //    Debug.DrawRay(ray.origin, ray.direction * 200, Color.yellow);
+
+    //    if (Physics.Raycast(ray, out hit, rayMaxRange))
+    //    {
+    //        if (hit.transform.tag == "Getable")
+    //        {
+    //            pointer.GetComponent<MeshRenderer>().material = blueToon;
+    //        }
+    //        else
+    //        {
+    //            pointer.GetComponent<MeshRenderer>().material = whiteToon;
+    //        }
+    //    }
+
+    //    if (Physics.Raycast(ray, out hit, rayMaxRange, layerMask))
+    //    {
+
+    //        if (takenObject != null)
+    //        {
+    //            pointer.GetComponent<MeshRenderer>().material = redToon;
+    //        }
+    //        else
+    //        {
+    //            targetForTakenObjects.position = hit.point;
+    //        }
+
+    //        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+    //        {
+    //            if (hit.transform.tag == "Getable")
+    //            {
+    //                distanceMultiplier = Vector3.Distance(mainCamera.transform.position, hit.transform.position);
+    //                scaleMultiplier = hit.transform.transform.localScale;
+    //                hit.transform.transform.parent = targetForTakenObjects;
+    //                takenObject = hit.transform.gameObject;
+    //                takenObject.GetComponent<Rigidbody>().isKinematic = true;
+    //                takenObject.GetComponent<Collider>().isTrigger = true;
+    //                if (takenObject.GetComponent<MeshRenderer>() != null)
+    //                {
+    //                    takenObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+    //                    takenObject.GetComponent<MeshRenderer>().receiveShadows = false;
+    //                }
+    //                takenObject.gameObject.layer = 8;
+    //                foreach (Transform child in takenObject.transform)
+    //                {
+    //                    takenObject.GetComponent<Rigidbody>().isKinematic = true;
+    //                    takenObject.GetComponent<Collider>().isTrigger = true;
+    //                    child.gameObject.layer = 8;
+    //                }
+    //            }
+    //        }
+    //        if (Input.GetKey(KeyCode.E) || Input.GetMouseButton(0))
+    //        {
+    //            if (takenObject != null)
+    //            {
+    //                takenObject.transform.position = Vector3.Lerp(takenObject.transform.position, targetForTakenObjects.position, Time.deltaTime * 5);
+    //                //takenObject.transform.position = targetForTakenObjects.position;
+
+    //                //pointer.transform.position = targetForTakenObjects.position;
+
+    //                takenObject.transform.rotation = Quaternion.Lerp(takenObject.transform.rotation, targetForTakenObjects.rotation, Time.deltaTime * 5);
+
+    //                cosine = Vector3.Dot(ray.direction, hit.normal);
+    //                cameraHeight = Mathf.Abs(hit.distance * cosine);
+
+    //                positionCalculation = (hit.distance * takenObject.GetComponent<Collider>().bounds.size.y / 2) / (cameraHeight);
+
+    //                if (positionCalculation < hit.distance && positionCalculation > 0)
+    //                {
+    //                    targetForTakenObjects.position = Vector3.Lerp(targetForTakenObjects.position, hit.point
+    //                        - (ray.direction * positionCalculation), Time.deltaTime * 10);
+    //                    lastPositionCalculation = positionCalculation;
+    //                }
+    //                else
+    //                {
+    //                    targetForTakenObjects.position = Vector3.Lerp(targetForTakenObjects.position, hit.point
+    //                        - (ray.direction * lastPositionCalculation), Time.deltaTime * 10);
+    //                }
+
+
+    //                takenObject.transform.localScale = scaleMultiplier * (Vector3.Distance(mainCamera.transform.position, takenObject.transform.position) / distanceMultiplier);
+
+    //            }
+    //        }
+    //        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0))
+    //        {
+    //            if (takenObject != null)
+    //            {
+
+    //                //pointer.transform.position = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2, (Screen.height / 2) + (Screen.height / 10), 1));
+    //                takenObject.GetComponent<Rigidbody>().isKinematic = false;
+    //                takenObject.GetComponent<Collider>().isTrigger = false;
+    //                if (takenObject.GetComponent<MeshRenderer>() != null)
+    //                {
+    //                    takenObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+    //                    takenObject.GetComponent<MeshRenderer>().receiveShadows = true;
+    //                }
+    //                takenObject.transform.parent = null;
+    //                takenObject.gameObject.layer = 0;
+    //                foreach (Transform child in takenObject.transform)
+    //                {
+    //                    takenObject.GetComponent<Rigidbody>().isKinematic = false;
+    //                    takenObject.GetComponent<Collider>().isTrigger = false;
+    //                    child.gameObject.layer = 0;
+    //                }
+
+    //                takenObject = null;
+    //            }
+    //        }
+
+
+
+    //    }
+    //}
+
+    //----------V 1.1
+    //void Update()
+    //{
+
+    //    ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, (Screen.height / 2) + (Screen.height / 10), 0));
+    //    Debug.DrawRay(ray.origin, ray.direction * 200, Color.yellow);
+
+    //    if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+    //    {
+    //        if (hit.transform.tag == "Getable")
+    //        {
+    //            pointer.GetComponent<MeshRenderer>().material = blueToon;
+    //        }
+    //        else
+    //        {
+    //            pointer.GetComponent<MeshRenderer>().material = whiteToon;
+    //        }
+    //    }
+
+    //    if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+    //    {
+
+    //        if (takenObject != null)
+    //        {
+    //            pointer.GetComponent<MeshRenderer>().material = redToon;
+    //        }
+    //        else
+    //        {
+    //            targetForTakenObjects.position = hit.point;
+    //        }
+
+    //        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+    //        {
+    //            if (hit.transform.tag == "Getable")
+    //            {
+    //                distanceMultiplier = Vector3.Distance(mainCamera.transform.position, hit.transform.position);
+    //                scaleMultiplier = hit.transform.transform.localScale;
+    //                hit.transform.transform.parent = targetForTakenObjects;
+    //                takenObject = hit.transform.gameObject;
+    //                takenObject.GetComponent<Rigidbody>().isKinematic = true;
+    //                takenObject.GetComponent<Collider>().isTrigger = true;
+    //                if (takenObject.GetComponent<MeshRenderer>() != null)
+    //                {
+    //                    takenObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+    //                    takenObject.GetComponent<MeshRenderer>().receiveShadows = false;
+    //                }
+    //                takenObject.gameObject.layer = 8;
+    //                foreach (Transform child in takenObject.transform)
+    //                {
+    //                    child.gameObject.layer = 8;
+    //                }
+    //            }
+    //        }
+    //        if (Input.GetKey(KeyCode.E) || Input.GetMouseButton(0))
+    //        {
+    //            if (takenObject != null)
+    //            {
+    //                //takenObject.transform.position = Vector3.Lerp(takenObject.transform.position, targetForTakenObjects.position, Time.deltaTime * 5);
+    //                takenObject.transform.position = targetForTakenObjects.position;
+
+    //                //pointer.transform.position = targetForTakenObjects.position;
+
+    //                takenObject.transform.rotation = Quaternion.Lerp(takenObject.transform.rotation, targetForTakenObjects.rotation, Time.deltaTime * 5);
+
+    //                heightRay = Physics.RaycastAll(mainCamera.transform.position, -hit.normal, 100);
+    //                //Debug.DrawRay(mainCamera.transform.position, -hit.normal);
+    //                foreach(RaycastHit hhit in heightRay)
+    //                {
+    //                    if(hhit.transform.gameObject == hit.transform.gameObject) 
+    //                    {
+    //                        cameraHeight = hhit.distance;
+    //                    }
+    //                }
+
+    //                //if (Physics.Raycast(mainCamera.transform.position, -hit.normal, out heightCalculationRay, Mathf.Infinity, layerMask))
+    //                //{
+    //                //    cameraHeight = heightCalculationRay.distance;
+    //                //}
+
+    //                float calc = (hit.distance * takenObject.GetComponent<Collider>().bounds.size.y / 2) / (cameraHeight);
+
+
+    //                targetForTakenObjects.position = Vector3.Lerp(targetForTakenObjects.position, hit.point
+    //                    - (ray.direction * calc)
+    //                    //+ (hit.normal * (takenObject.GetComponent<Collider>().bounds.size.y * 0.5f) )
+    //                    , Time.deltaTime * 10);
+
+    //                takenObject.transform.localScale = scaleMultiplier * (Vector3.Distance(mainCamera.transform.position, takenObject.transform.position) / distanceMultiplier);
+
+    //            }
+    //        }
+    //        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0))
+    //        {
+    //            if (takenObject != null)
+    //            {
+
+    //                //pointer.transform.position = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2, (Screen.height / 2) + (Screen.height / 10), 1));
+    //                takenObject.GetComponent<Rigidbody>().isKinematic = false;
+    //                takenObject.GetComponent<Collider>().isTrigger = false;
+    //                if (takenObject.GetComponent<MeshRenderer>() != null)
+    //                {
+    //                    takenObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+    //                    takenObject.GetComponent<MeshRenderer>().receiveShadows = true;
+    //                }
+    //                takenObject.transform.parent = null;
+    //                takenObject.gameObject.layer = 0;
+    //                foreach (Transform child in takenObject.transform)
+    //                {
+    //                    child.gameObject.layer = 0;
+    //                }
+
+    //                takenObject = null;
+    //            }
+    //        }
+
+
+
+    //    }
+    //}
+
+    //--------------V 1.0
+    //void Update()
+    //{
+
+    //    ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, (Screen.height / 2) + (Screen.height / 10), 0));
+    //    Debug.DrawRay(ray.origin, ray.direction * 200, Color.yellow);
+
+    //    if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+    //    {
+    //        if (hit.transform.tag == "Getable")
+    //        {
+    //            pointer.GetComponent<MeshRenderer>().material = blueToon;
+    //        }
+    //        else
+    //        {
+    //            pointer.GetComponent<MeshRenderer>().material = whiteToon;
+    //        }
+    //    }
+
+    //    if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+    //    {
+
+    //        if (takenObject != null)
+    //        {
+    //            pointer.GetComponent<MeshRenderer>().material = redToon;
+    //        }
+    //        else
+    //        {
+    //            targetForTakenObjects.position = hit.point;
+    //        }
+
+    //        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+    //        {
+    //            if (hit.transform.tag == "Getable")
+    //            {
+    //                distanceMultiplier = Vector3.Distance(mainCamera.transform.position, hit.transform.position);
+    //                scaleMultiplier = hit.transform.transform.localScale;
+    //                hit.transform.transform.parent = targetForTakenObjects;
+    //                takenObject = hit.transform.gameObject;
+    //                takenObject.GetComponent<Rigidbody>().isKinematic = true;
+    //                takenObject.GetComponent<Collider>().isTrigger = true;
+    //                if (takenObject.GetComponent<MeshRenderer>() != null)
+    //                {
+    //                    takenObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+    //                    takenObject.GetComponent<MeshRenderer>().receiveShadows = false;
+    //                }
+    //                takenObject.gameObject.layer = 8;
+    //                foreach (Transform child in takenObject.transform)
+    //                {
+    //                    child.gameObject.layer = 8;
+    //                }
+    //            }
+    //        }
+    //        if (Input.GetKey(KeyCode.E) || Input.GetMouseButton(0))
+    //        {
+    //            if (takenObject != null)
+    //            {
+    //                //takenObject.transform.position = Vector3.Lerp(takenObject.transform.position, targetForTakenObjects.position, Time.deltaTime * 5);
+    //                takenObject.transform.position = targetForTakenObjects.position;
+
+    //                pointer.transform.position = targetForTakenObjects.position;
+
+    //                takenObject.transform.rotation = Quaternion.Lerp(takenObject.transform.rotation, targetForTakenObjects.rotation, Time.deltaTime * 5);
+
+    //                if (Physics.Raycast(mainCamera.transform.position, -hit.normal, out heightCalculationRay, Mathf.Infinity, layerMask))
+    //                {
+    //                    cameraHeight = heightCalculationRay.distance;
+    //                }
+
+    //                float calc = (hit.distance * cameraHeight) / (takenObject.GetComponent<Collider>().bounds.size.y / 2);
+
+    //                targetForTakenObjects.position = Vector3.Lerp(targetForTakenObjects.position, hit.point
+    //                    - (ray.direction / calc)
+    //                    + (hit.normal * (takenObject.GetComponent<Collider>().bounds.size.y * 0.5f))
+    //                    , Time.deltaTime * 10);
+
+    //                takenObject.transform.localScale = scaleMultiplier * (Vector3.Distance(mainCamera.transform.position, takenObject.transform.position) / distanceMultiplier);
+
+    //            }
+    //        }
+    //        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0))
+    //        {
+    //            if (takenObject != null)
+    //            {
+
+    //                pointer.transform.position = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2, (Screen.height / 2) + (Screen.height / 10), 1));
+    //                takenObject.GetComponent<Rigidbody>().isKinematic = false;
+    //                takenObject.GetComponent<Collider>().isTrigger = false;
+    //                if (takenObject.GetComponent<MeshRenderer>() != null)
+    //                {
+    //                    takenObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+    //                    takenObject.GetComponent<MeshRenderer>().receiveShadows = true;
+    //                }
+    //                takenObject.transform.parent = null;
+    //                takenObject.gameObject.layer = 0;
+    //                foreach (Transform child in takenObject.transform)
+    //                {
+    //                    child.gameObject.layer = 0;
+    //                }
+
+    //                takenObject = null;
+    //            }
+    //        }
+
+
+
+    //    }
+    //}

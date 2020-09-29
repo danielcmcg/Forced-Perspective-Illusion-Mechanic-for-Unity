@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 7ae040fa461b32d42ad7169526b0a17f
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: vehicle_rcLand_aerial
+    100004: vehicle_rcLand_axle_front
+    100006: vehicle_rcLand_axle_rear
+    100008: vehicle_rcLand_axle_rearLeft
+    100010: vehicle_rcLand_axle_rearRight
+    100012: vehicle_rcLand_body
+    100014: vehicle_rcLand_bumper_front
+    100016: vehicle_rcLand_bumper_rear
+    100018: vehicle_rcLand_mudFlaps_rearLeft
+    100020: vehicle_rcLand_mudFlaps_rearRight
+    100022: vehicle_rcLand_suspension_frontLeft
+    100024: vehicle_rcLand_suspension_frontRight
+    100026: vehicle_rcLand_suspension_rearLeft
+    100028: vehicle_rcLand_suspension_rearRight
+    100030: vehicle_rcLand_wheel_rearLeft
+    100032: vehicle_rcLand_wheel_rearRight
+    100034: WHEEL_LEFT_FRONT
+    100036: WHEEL_RIGHT_FRONT
+    100038: vehicle_rcLand_wheel_frontLeft
+    100040: vehicle_rcLand_wheel_frontRight
+    400000: //RootNode
+    400002: vehicle_rcLand_aerial
+    400004: vehicle_rcLand_axle_front
+    400006: vehicle_rcLand_axle_rear
+    400008: vehicle_rcLand_axle_rearLeft
+    400010: vehicle_rcLand_axle_rearRight
+    400012: vehicle_rcLand_body
+    400014: vehicle_rcLand_bumper_front
+    400016: vehicle_rcLand_bumper_rear
+    400018: vehicle_rcLand_mudFlaps_rearLeft
+    400020: vehicle_rcLand_mudFlaps_rearRight
+    400022: vehicle_rcLand_suspension_frontLeft
+    400024: vehicle_rcLand_suspension_frontRight
+    400026: vehicle_rcLand_suspension_rearLeft
+    400028: vehicle_rcLand_suspension_rearRight
+    400030: vehicle_rcLand_wheel_rearLeft
+    400032: vehicle_rcLand_wheel_rearRight
+    400034: WHEEL_LEFT_FRONT
+    400036: WHEEL_RIGHT_FRONT
+    400038: vehicle_rcLand_wheel_frontLeft
+    400040: vehicle_rcLand_wheel_frontRight
+    2300000: vehicle_rcLand_aerial
+    2300002: vehicle_rcLand_axle_front
+    2300004: vehicle_rcLand_axle_rear
+    2300006: vehicle_rcLand_axle_rearLeft
+    2300008: vehicle_rcLand_axle_rearRight
+    2300010: vehicle_rcLand_body
+    2300012: vehicle_rcLand_bumper_front
+    2300014: vehicle_rcLand_bumper_rear
+    2300016: vehicle_rcLand_mudFlaps_rearLeft
+    2300018: vehicle_rcLand_mudFlaps_rearRight
+    2300020: vehicle_rcLand_suspension_frontLeft
+    2300022: vehicle_rcLand_suspension_frontRight
+    2300024: vehicle_rcLand_suspension_rearLeft
+    2300026: vehicle_rcLand_suspension_rearRight
+    2300028: vehicle_rcLand_wheel_rearLeft
+    2300030: vehicle_rcLand_wheel_rearRight
+    2300032: WHEEL_LEFT_FRONT
+    2300034: WHEEL_RIGHT_FRONT
+    2300036: vehicle_rcLand_wheel_frontLeft
+    2300038: vehicle_rcLand_wheel_frontRight
+    3300000: vehicle_rcLand_aerial
+    3300002: vehicle_rcLand_axle_front
+    3300004: vehicle_rcLand_axle_rear
+    3300006: vehicle_rcLand_axle_rearLeft
+    3300008: vehicle_rcLand_axle_rearRight
+    3300010: vehicle_rcLand_body
+    3300012: vehicle_rcLand_bumper_front
+    3300014: vehicle_rcLand_bumper_rear
+    3300016: vehicle_rcLand_mudFlaps_rearLeft
+    3300018: vehicle_rcLand_mudFlaps_rearRight
+    3300020: vehicle_rcLand_suspension_frontLeft
+    3300022: vehicle_rcLand_suspension_frontRight
+    3300024: vehicle_rcLand_suspension_rearLeft
+    3300026: vehicle_rcLand_suspension_rearRight
+    3300028: vehicle_rcLand_wheel_rearLeft
+    3300030: vehicle_rcLand_wheel_rearRight
+    3300032: WHEEL_LEFT_FRONT
+    3300034: WHEEL_RIGHT_FRONT
+    3300036: vehicle_rcLand_wheel_frontLeft
+    3300038: vehicle_rcLand_wheel_frontRight
+    4300000: vehicle_rcLand_aerial
+    4300002: vehicle_rcLand_axle_front
+    4300004: vehicle_rcLand_suspension_frontLeft
+    4300006: vehicle_rcLand_suspension_frontRight
+    4300008: WHEEL_LEFT_FRONT
+    4300010: WHEEL_RIGHT_FRONT
+    4300012: vehicle_rcLand_axle_rear
+    4300014: vehicle_rcLand_axle_rearRight
+    4300016: vehicle_rcLand_suspension_rearRight
+    4300018: vehicle_rcLand_mudFlaps_rearRight
+    4300020: vehicle_rcLand_wheel_rearRight
+    4300022: vehicle_rcLand_axle_rearLeft
+    4300024: vehicle_rcLand_suspension_rearLeft
+    4300026: vehicle_rcLand_mudFlaps_rearLeft
+    4300028: vehicle_rcLand_wheel_rearLeft
+    4300030: vehicle_rcLand_body
+    4300032: vehicle_rcLand_bumper_front
+    4300034: vehicle_rcLand_bumper_rear
+    4300036: vehicle_rcLand_wheel_frontLeft
+    4300038: vehicle_rcLand_wheel_frontRight
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
